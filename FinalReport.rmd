@@ -54,6 +54,8 @@ barchartGC(~infected + treatment,data=druggies, type="percent")
 
 ```
 The bar charts above depict the distribution of infection outcomes (infected or not infected) among DrugUsers based on whether they received triUmpsal or not. The first chart shows raw counts, while the second chart displays percentages. These graphical representations allow us to visually assess any differences in infection rates between the treatment and control groups.
+
+
 ### Numerical Descriptive Results
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
@@ -73,6 +75,13 @@ chisq.test(table1)
 chisqtestGC(table1)
 fisher.test(table1)
 ```
+p-value: 4.23e-08 (very small, indicating strong evidence against the null hypothesis)
+Alternative hypothesis: The true odds ratio is not equal to 1.  
+
+Interpretation:  
+p-value: This extremely small p-value (4.23e-08) suggests strong evidence to reject the null hypothesis. In hypothesis testing, a p-value below the significance level (usually 0.05) indicates that the data provides significant evidence against the null hypothesis.
+
+
 
 Null Hypothesis (H₀): triUmpsal has no effect on preventing AIDS among DrugUsers.  
 Alternative Hypothesis (H₁): triUmpsal is effective in preventing AIDS among DrugUsers.  
