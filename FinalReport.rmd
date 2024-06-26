@@ -53,8 +53,7 @@ barchartGC(~infected + treatment,data=druggies)
 barchartGC(~infected + treatment,data=druggies, type="percent")
 
 ```
-The bar charts above depict the distribution of infection outcomes (infected or not infected) among DrugUsers based on whether they received triUmpsal or not. The first chart shows raw counts, while the second chart displays percentages. These graphical representations allow us to visually assess any differences in infection rates between the treatment and control groups.
-
+The bar charts above depict the distribution of infection outcomes (infected or not infected) among DrugUsers based on whether they received triUmpsal or not. The first chart shows raw counts, while the second chart displays percentages. These graphical representations allow us to visually assess any differences in infection rates between the treatment and control groups. Based on the top left chart the drug also shows effectiveness in preventing infection, making it a good option vs taking the placebo.
 
 ### Numerical Descriptive Results
 
@@ -66,6 +65,12 @@ rowPerc(table1)
 colPerc(table1)
 ```
 
+Based on the numerical results:
+
+For Individuals Infected with aids: Consider the drug treatment due to its lower infection percentage compared to placebo.
+
+For Individuals without aids: The drug also shows effectiveness in preventing infection, making it a viable choice.
+
 ## Inferential Results
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
@@ -75,17 +80,23 @@ chisq.test(table1)
 chisqtestGC(table1)
 fisher.test(table1)
 ```
-p-value: 4.23e-08 (very small, indicating strong evidence against the null hypothesis)
-Alternative hypothesis: The true odds ratio is not equal to 1.  
 
-Interpretation:  
-p-value: This extremely small p-value (4.23e-08) suggests strong evidence to reject the null hypothesis. In hypothesis testing, a p-value below the significance level (usually 0.05) indicates that the data provides significant evidence against the null hypothesis.
+ 
+Interpretation:
+The Pearson's chi-squared test with Yates' continuity correction was used to assess the association between treatment type (drug vs. placebo) and infection status (aids vs. none). The test yielded a significant result (p < 0.05), indicating that there is a statistically significant association between treatment type and infection status.
 
+Contributions to Chi-square Statistic:
+The contributions to the chi-square statistic suggest that the observed counts deviate significantly from the expected counts under the null hypothesis of no association.
+Fisher's Exact Test for Count Data
+Summary:
 
+Fisher's Exact Test P-Value: 
 
-Null Hypothesis (H₀): triUmpsal has no effect on preventing AIDS among DrugUsers.  
-Alternative Hypothesis (H₁): triUmpsal is effective in preventing AIDS among DrugUsers.  
-We performed a statistical test (specific test method to be mentioned based on the data characteristics) to evaluate whether the observed differences in infection rates between the treatment and control groups  are statistically significant. The test output provided a test statistic and a p-value, which were  interpreted to make a decision regarding the null hypothesis.  
+Interpretation:
+Fisher's Exact Test, which is another method for analyzing the association between categorical variables, also shows a highly significant p-value (p < 0.05). The odds ratio estimate of 0.353 indicates that the odds of infection are significantly lower in the drug treatment group compared to the placebo group.
+
+Conclusion:
+Both Pearson's chi-squared test with Yates' continuity correction and Fisher's Exact Test provide strong evidence of a significant association between treatment type (drug vs. placebo) and infection status (aids vs. none). The findings suggest that the drug treatment is associated with a lower incidence of infection compared to placebo. Therefore, based on these results, there is strong statistical support to recommend the drug treatment over placebo for reducing the risk of infection.
 
 
 # Discussion and Conclusion
